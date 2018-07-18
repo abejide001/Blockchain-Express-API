@@ -7,8 +7,6 @@ require('dotenv').config()
 var indexRouter = require('./routes/index');
 
 const mongoose = require('mongoose');
-const Promise = require('bluebird');
-mongoose.Promise = Promise;
 mongoose.connect(process.env.MONGO_URI)
   .then(() => console.log('connection succesful'))
   .catch((err) => console.error(err));
